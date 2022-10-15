@@ -41,7 +41,7 @@ int main(const int argc, const char** argv) {
 	}
 
 	double totalTime = get_time()-t0;
-	float solPos = solutionPos(p, nBodies);
+	double solPos = solutionPos(p, nBodies);
 	printf("%d Bodies with %d iterations: %0.3f Millions Interactions/second\n", nBodies, nIters, 1e-6 * nBodies * nBodies / totalTime);
 	printf("pos=%e\n", solPos);
 
