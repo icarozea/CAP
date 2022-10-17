@@ -14,7 +14,7 @@ double solutionPos(body *p, int n)
 	float pos_global  = 0.0f;
 
 	for (int i = 0 ; i < n; i++) {
-		pos_private = sqrtf(p[i].x*p[i].x+p[i].y*p[i].y+p[i].z*p[i].z);
+		pos_private = sqrtf(p -> x[i]*p -> x[i]+p -> y[i]*p -> y[i]+p -> z[i]*p -> z[i]);
 		pos_global+=pos_private;
 	}
 	return(pos_global);
@@ -41,7 +41,7 @@ int main(const int argc, const char** argv) {
 	}
 
 	double totalTime = get_time()-t0;
-	double solPos = solutionPos(p, nBodies);
+	float solPos = solutionPos(p, nBodies);
 	printf("%d Bodies with %d iterations: %0.3f Millions Interactions/second\n", nBodies, nIters, 1e-6 * nBodies * nBodies / totalTime);
 	printf("pos=%e\n", solPos);
 
