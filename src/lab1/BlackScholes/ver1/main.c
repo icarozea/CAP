@@ -74,6 +74,8 @@ int main(int argc, char * argv[])
 
     /* Display a few computed values */
     vcalls=vputs=0.0f;
+    #pragma omp simd
+    #pragma vector aligned
     for (i=0; i<nopt; i++){
         vcalls+=vcall_compiler[i]/nopt;
         vputs+=vput_compiler[i]/nopt;

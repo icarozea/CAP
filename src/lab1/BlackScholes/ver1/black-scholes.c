@@ -78,7 +78,8 @@ void BlackScholesFormula_Compiler( int nopt,
     tfloat d1, d2, w1, w2;
     tfloat mr = -r;
     tfloat sig_sig_two = sig * sig * TWO;
-
+    
+#pragma omp simd
 #pragma vector aligned
     for ( i = 0; i < nopt; i++ )
     {
