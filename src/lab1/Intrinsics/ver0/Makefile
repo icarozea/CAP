@@ -1,4 +1,4 @@
-CC   = icx
+CC   = icc
 
 EXE   = main 
 
