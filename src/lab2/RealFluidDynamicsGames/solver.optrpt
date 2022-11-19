@@ -1,0 +1,192 @@
+Global optimization report for : dens_step
+
+LOOP BEGIN at solver.c (14, 5)
+<Multiversioned v2>
+    remark #15319: Loop was not vectorized: novector directive used
+LOOP END
+
+LOOP BEGIN at solver.c (14, 5)
+<Multiversioned v1>
+    remark #25228: Loop multiversioned for Data Dependence
+    remark #15300: LOOP WAS VECTORIZED
+    remark #15305: vectorization support: vector length 4
+LOOP END
+
+LOOP BEGIN at solver.c (14, 5)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at solver.c (38, 5)
+
+    LOOP BEGIN at solver.c (39, 2)
+
+        LOOP BEGIN at solver.c (40, 13)
+        LOOP END
+    LOOP END
+
+    LOOP BEGIN at solver.c (22, 5)
+    LOOP END
+LOOP END
+=================================================================
+
+Global optimization report for : advect
+
+LOOP BEGIN at solver.c (65, 5)
+
+    LOOP BEGIN at solver.c (67, 5)
+    LOOP END
+LOOP END
+=================================================================
+
+Global optimization report for : set_bnd
+
+LOOP BEGIN at solver.c (22, 5)
+LOOP END
+=================================================================
+
+Global optimization report for : vel_step
+
+LOOP BEGIN at solver.c (14, 5)
+<Multiversioned v2>
+    remark #15319: Loop was not vectorized: novector directive used
+LOOP END
+
+LOOP BEGIN at solver.c (14, 5)
+<Multiversioned v1>
+    remark #25228: Loop multiversioned for Data Dependence
+    remark #15300: LOOP WAS VECTORIZED
+    remark #15305: vectorization support: vector length 4
+LOOP END
+
+LOOP BEGIN at solver.c (14, 5)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at solver.c (14, 5)
+<Multiversioned v2>
+    remark #15319: Loop was not vectorized: novector directive used
+LOOP END
+
+LOOP BEGIN at solver.c (14, 5)
+<Multiversioned v1>
+    remark #25228: Loop multiversioned for Data Dependence
+    remark #15300: LOOP WAS VECTORIZED
+    remark #15305: vectorization support: vector length 4
+LOOP END
+
+LOOP BEGIN at solver.c (14, 5)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at solver.c (38, 5)
+
+    LOOP BEGIN at solver.c (39, 2)
+
+        LOOP BEGIN at solver.c (40, 13)
+        LOOP END
+    LOOP END
+
+    LOOP BEGIN at solver.c (22, 5)
+    LOOP END
+LOOP END
+
+LOOP BEGIN at solver.c (38, 5)
+
+    LOOP BEGIN at solver.c (39, 2)
+
+        LOOP BEGIN at solver.c (40, 13)
+        LOOP END
+    LOOP END
+
+    LOOP BEGIN at solver.c (22, 5)
+    LOOP END
+LOOP END
+=================================================================
+
+Global optimization report for : project
+
+LOOP BEGIN at solver.c (98, 9)
+
+    LOOP BEGIN at solver.c (99, 5)
+    LOOP END
+LOOP END
+
+LOOP BEGIN at solver.c (22, 5)
+LOOP END
+
+LOOP BEGIN at solver.c (22, 5)
+LOOP END
+
+LOOP BEGIN at solver.c (38, 5)
+
+    LOOP BEGIN at solver.c (39, 2)
+
+        LOOP BEGIN at solver.c (40, 13)
+        LOOP END
+    LOOP END
+
+    LOOP BEGIN at solver.c (22, 5)
+    LOOP END
+LOOP END
+
+LOOP BEGIN at solver.c (111, 9)
+
+    LOOP BEGIN at solver.c (112, 5)
+    LOOP END
+LOOP END
+
+LOOP BEGIN at solver.c (22, 5)
+LOOP END
+
+LOOP BEGIN at solver.c (22, 5)
+LOOP END
+=================================================================
+
+---- Begin Inlining Report ----
+Option Values:
+  inline-threshold: 225
+  inlinehint-threshold: 325
+  inlinecold-threshold: 45
+  inlineoptsize-threshold: 15
+
+DEAD STATIC FUNC: add_source
+
+DEAD STATIC FUNC: diffuse
+
+DEAD STATIC FUNC: lin_solve
+
+COMPILE FUNC: set_bnd
+
+COMPILE FUNC: advect
+   -> set_bnd solver.c (92,5)
+
+COMPILE FUNC: dens_step
+   -> INLINE: add_source solver.c (123,5)
+   -> INLINE: diffuse solver.c (125,5)
+      -> INLINE: lin_solve solver.c (54,5)
+         -> INLINE: set_bnd solver.c (47,9)
+   -> advect solver.c (127,5)
+
+COMPILE FUNC: project
+   -> INLINE: set_bnd solver.c (105,5)
+   -> INLINE: set_bnd solver.c (106,5)
+   -> INLINE: lin_solve solver.c (108,5)
+      -> INLINE: set_bnd solver.c (47,9)
+   -> INLINE: set_bnd solver.c (117,5)
+   -> INLINE: set_bnd solver.c (118,5)
+
+COMPILE FUNC: vel_step
+   -> INLINE: add_source solver.c (132,5)
+   -> INLINE: add_source solver.c (133,5)
+   -> INLINE: diffuse solver.c (135,5)
+      -> INLINE: lin_solve solver.c (54,5)
+         -> INLINE: set_bnd solver.c (47,9)
+   -> INLINE: diffuse solver.c (137,5)
+      -> INLINE: lin_solve solver.c (54,5)
+         -> INLINE: set_bnd solver.c (47,9)
+   -> project solver.c (138,5)
+   -> advect solver.c (141,5)
+   -> advect solver.c (142,5)
+   -> project solver.c (143,5)
+
+---- End Inlining Report ------
