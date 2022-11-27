@@ -10,7 +10,7 @@ NAME=trapezoidal
 default: serial
 
 serial:
-	$(CC) $(CFLAGS) $(NAME).c -o $(NAME).serial.exe $(LIB)
+	$(CC) $(CFLAGS) $(NAME).c -o $(NAME).serial.icc $(LIB)
 
 clean:
-	rm -rf *exe *.o *.out *.optrpt *.yaml
+	rm -rf *icc *.o *.out *.optrpt *.yaml

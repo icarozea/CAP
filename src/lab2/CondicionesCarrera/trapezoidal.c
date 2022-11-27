@@ -1,3 +1,6 @@
+/* To compile Classic Compiler: make */
+/*                               more trapezoidal.serial.optrpt */
+/*                               ./trapezoidal.serial.icc 900000000 */
 #include <stdio.h>
 #include <math.h>
 #include <omp.h>
@@ -44,8 +47,10 @@ double Trap(double a, double b, int n, double h) {
 	int k;
 
 	integral = 0.0;
+    #pragma omp parallel for private(k) reduction(+:integral)
 	for (k = 1; k <= n; k++) {
 		area = h*(f(a+k*h)+f(a+(k-1)*h))/2.0;
+        //#pragma omp atomic
 		integral+=area;
 	}
 

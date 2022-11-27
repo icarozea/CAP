@@ -1,0 +1,68 @@
+Global optimization report for : main
+=================================================================
+
+Global optimization report for : Trap
+=================================================================
+
+Global optimization report for : f
+=================================================================
+
+Global optimization report for : Trap_tree_reduce_6
+=================================================================
+
+Global optimization report for : Trap.extracted
+
+LOOP BEGIN at trapezoidal.c (50, 5)
+    remark: OpenMP: Outlined parallel loop
+    remark #15300: LOOP WAS VECTORIZED
+    remark #15305: vectorization support: vector length 4
+LOOP END
+
+LOOP BEGIN at trapezoidal.c (50, 5)
+<Remainder loop for vectorization>
+LOOP END
+=================================================================
+
+---- Begin Inlining Report ----
+Option Values:
+  inline-threshold: 225
+  inlinehint-threshold: 325
+  inlinecold-threshold: 45
+  inlineoptsize-threshold: 15
+
+DEAD STATIC FUNC: atoi
+
+DEAD STATIC FUNC: llvm.directive.region.entry
+
+DEAD STATIC FUNC: llvm.directive.region.exit
+
+COMPILE FUNC: f
+   -> llvm.exp.f64 trapezoidal.c (68,24)
+   -> llvm.sin.f64 trapezoidal.c (68,42)
+
+COMPILE FUNC: Trap
+   -> DELETE: llvm.directive.region.entry trapezoidal.c (50,5)
+   -> INLINE: f trapezoidal.c (52,13)
+      -> DELETE: llvm.exp.f64 trapezoidal.c (68,24)
+      -> DELETE: llvm.sin.f64 trapezoidal.c (68,42)
+   -> INLINE: f trapezoidal.c (52,22)
+      -> llvm.exp.f64 trapezoidal.c (68,24)
+      -> DELETE: llvm.sin.f64 trapezoidal.c (68,42)
+   -> DELETE: llvm.directive.region.exit trapezoidal.c (50,5)
+   
+COMPILE FUNC: main
+   -> INLINE: atoi trapezoidal.c (18,7)
+                  -> INLINE: Trap trapezoidal.c (27,13)
+      -> INLINE: f trapezoidal.c (52,13)
+         -> DELETE: llvm.exp.f64 trapezoidal.c (68,24)
+         -> DELETE: llvm.sin.f64 trapezoidal.c (68,42)
+      -> INLINE: f trapezoidal.c (52,22)
+         -> DELETE: llvm.exp.f64 trapezoidal.c (68,24)
+         -> DELETE: llvm.sin.f64 trapezoidal.c (68,42)
+                  
+COMPILE FUNC: Trap_tree_reduce_6
+
+COMPILE FUNC: Trap.extracted
+            -> DELETE: __kmpc_end_reduce trapezoidal.c
+      
+---- End Inlining Report ------
