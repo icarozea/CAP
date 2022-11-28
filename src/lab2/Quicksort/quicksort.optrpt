@@ -51,29 +51,32 @@ LOOP END
 
 Global optimization report for : _Z9quickSortPiii
 
-LOOP BEGIN at quicksort.cpp (48, 5)
-
-    LOOP BEGIN at quicksort.cpp (25, 2)
-        remark #15344: Loop was not vectorized: vector dependence prevents vectorization
-        remark #15346: vector dependence: assumed FLOW dependence between (18:12) and (18:14) 
-        remark #15346: vector dependence: assumed FLOW dependence between (19:12) and (26:6) 
-        remark #15346: vector dependence: assumed FLOW dependence between (19:12) and (18:14) 
-        remark #15346: vector dependence: assumed OUTPUT dependence between (19:12) and (18:12) 
-        remark #15346: vector dependence: assumed FLOW dependence between (28:5) and (18:14) 
-        remark #15346: vector dependence: assumed FLOW dependence between (28:5) and (19:12) 
-        remark #15346: vector dependence: assumed FLOW dependence between (28:5) and (28:5) 
-        remark #25439: Loop unrolled with remainder by 4
-    LOOP END
-
-    LOOP BEGIN at quicksort.cpp (25, 2)
-    <Remainder loop>
-    LOOP END
+LOOP BEGIN at quicksort.cpp (25, 2)
+    remark #15344: Loop was not vectorized: vector dependence prevents vectorization
+    remark #15346: vector dependence: assumed FLOW dependence between (18:12) and (18:14) 
+    remark #15346: vector dependence: assumed FLOW dependence between (19:12) and (26:6) 
+    remark #15346: vector dependence: assumed FLOW dependence between (19:12) and (18:14) 
+    remark #15346: vector dependence: assumed OUTPUT dependence between (19:12) and (18:12) 
+    remark #15346: vector dependence: assumed FLOW dependence between (28:5) and (18:14) 
+    remark #15346: vector dependence: assumed FLOW dependence between (28:5) and (19:12) 
+    remark #15346: vector dependence: assumed FLOW dependence between (28:5) and (28:5) 
+    remark #25439: Loop unrolled with remainder by 4
 LOOP END
+
+LOOP BEGIN at quicksort.cpp (25, 2)
+<Remainder loop>
+LOOP END
+=================================================================
+
+Global optimization report for : .omp_task_entry.
+=================================================================
+
+Global optimization report for : .omp_task_entry..3
 =================================================================
 
 Global optimization report for : _Z7checkFnPii
 
-LOOP BEGIN at quicksort.cpp (58, 2)
+LOOP BEGIN at quicksort.cpp (59, 2)
 LOOP END
 =================================================================
 
@@ -87,15 +90,9 @@ LOOP END
 LOOP BEGIN at quicksort.cpp (11, 2)
 <Remainder loop>
 LOOP END
+=================================================================
 
-LOOP BEGIN at quicksort.cpp (91, 3)
-    remark #15527: Loop was not vectorized: function call to  cannot be vectorized
-    remark #25439: Loop unrolled with remainder by 8
-LOOP END
-
-LOOP BEGIN at quicksort.cpp (91, 3)
-<Remainder loop>
-LOOP END
+Global optimization report for : .omp_outlined..6
 =================================================================
 
 Global optimization report for : _GLOBAL__sub_I_quicksort.cpp
@@ -107,6 +104,14 @@ Option Values:
   inlinehint-threshold: 325
   inlinecold-threshold: 45
   inlineoptsize-threshold: 15
+
+DEAD STATIC FUNC: .omp_outlined.
+
+DEAD STATIC FUNC: .omp_outlined..1
+
+DEAD STATIC FUNC: .omp_task_privates_map.
+
+DEAD STATIC FUNC: .omp_task_privates_map..2
 
 DEAD STATIC FUNC: _ZNKSt5ctypeIcE5widenEc
 
@@ -155,34 +160,45 @@ COMPILE FUNC: _Z5pivotPiii
    -> INLINE: _ZSt4swapIiENSt9enable_ifIXsr6__and_ISt6__not_ISt15__is_tuple_likeIT_EESt21is_move_constructibleIS3_ESt18is_move_assignableIS3_EEE5valueEvE4typeERS3_SC_ quicksort.cpp (40,4)
 
 COMPILE FUNC: _Z9quickSortPiii
-   -> INLINE: _Z9partitionPiiii quicksort.cpp (50,13)
+      -> INLINE: _Z9partitionPiiii quicksort.cpp (50,13)
       -> INLINE: _Z4swapPiii quicksort.cpp (27,4)
-   -> _Z9quickSortPiii quicksort.cpp (52,3)
-   -> DELETE: _Z9quickSortPiii quicksort.cpp (53,3)
+            
+COMPILE FUNC: .omp_task_entry.
+   -> INLINE: .omp_outlined. quicksort.cpp (51,3)
+      -> INLINE: .omp_task_privates_map. quicksort.cpp (51,3)
+      -> _Z9quickSortPiii quicksort.cpp (52,4)
+   -> llvm.experimental.noalias.scope.decl quicksort.cpp (51,3)
+
+COMPILE FUNC: .omp_task_entry..3
+   -> INLINE: .omp_outlined..1 quicksort.cpp (53,3)
+      -> INLINE: .omp_task_privates_map..2 quicksort.cpp (53,3)
+      -> _Z9quickSortPiii quicksort.cpp (54,4)
+      -> DELETE: llvm.experimental.noalias.scope.decl quicksort.cpp (53,3)
+      -> DELETE: llvm.experimental.noalias.scope.decl quicksort.cpp (53,3)
+      -> DELETE: llvm.experimental.noalias.scope.decl quicksort.cpp (53,3)
+   -> llvm.experimental.noalias.scope.decl quicksort.cpp (53,3)
 
 COMPILE FUNC: _Z7checkFnPii
-   -> INLINE: _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc quicksort.cpp (60,9)
+   -> INLINE: _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc quicksort.cpp (61,9)
       -> INLINE: _ZNSt9basic_iosIcSt11char_traitsIcEE8setstateESt12_Ios_Iostate quicksort.cpp (568,8)
          -> INLINE: _ZNKSt9basic_iosIcSt11char_traitsIcEE7rdstateEv quicksort.cpp (158,27)
          -> INLINE: _ZStorSt12_Ios_IostateS_ quicksort.cpp (158,37)
          -> DELETE: _ZNSt9basic_iosIcSt11char_traitsIcEE5clearESt12_Ios_Iostate quicksort.cpp (158,15)
       -> INLINE: _ZNSt11char_traitsIcE6lengthEPKc quicksort.cpp (571,29)
          -> DELETE: strlen quicksort.cpp (342,9)
-            -> INLINE: _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc quicksort.cpp (60,26)
+            -> INLINE: _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc quicksort.cpp (61,26)
       -> INLINE: _ZNSt9basic_iosIcSt11char_traitsIcEE8setstateESt12_Ios_Iostate quicksort.cpp (568,8)
          -> INLINE: _ZNKSt9basic_iosIcSt11char_traitsIcEE7rdstateEv quicksort.cpp (158,27)
          -> INLINE: _ZStorSt12_Ios_IostateS_ quicksort.cpp (158,37)
          -> DELETE: _ZNSt9basic_iosIcSt11char_traitsIcEE5clearESt12_Ios_Iostate quicksort.cpp (158,15)
       -> INLINE: _ZNSt11char_traitsIcE6lengthEPKc quicksort.cpp (571,29)
-         -> DELETE: strlen quicksort.cpp (342,9)
-            -> INLINE: _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc quicksort.cpp (60,49)
+                     -> INLINE: _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc quicksort.cpp (61,49)
       -> INLINE: _ZNSt9basic_iosIcSt11char_traitsIcEE8setstateESt12_Ios_Iostate quicksort.cpp (568,8)
          -> INLINE: _ZNKSt9basic_iosIcSt11char_traitsIcEE7rdstateEv quicksort.cpp (158,27)
          -> INLINE: _ZStorSt12_Ios_IostateS_ quicksort.cpp (158,37)
          -> DELETE: _ZNSt9basic_iosIcSt11char_traitsIcEE5clearESt12_Ios_Iostate quicksort.cpp (158,15)
       -> INLINE: _ZNSt11char_traitsIcE6lengthEPKc quicksort.cpp (571,29)
-         -> DELETE: strlen quicksort.cpp (342,9)
-         -> INLINE: _ZNSolsEPFRSoS_E quicksort.cpp (60,56)
+                  -> INLINE: _ZNSolsEPFRSoS_E quicksort.cpp (61,56)
       -> INLINE:  quicksort.cpp (113,9)
          -> INLINE: _ZNKSt9basic_iosIcSt11char_traitsIcEE5widenEc quicksort.cpp (600,34)
             -> INLINE: _ZSt13__check_facetISt5ctypeIcEERKT_PS3_ quicksort.cpp (450,16)
@@ -190,73 +206,51 @@ COMPILE FUNC: _Z7checkFnPii
                               ->  quicksort.cpp (877,15)
                   -> INLINE: _ZSt5flushIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_ quicksort.cpp (600,14)
             
+COMPILE FUNC: .omp_outlined..6
+      -> _Z9quickSortPiii quicksort.cpp (85,2)
+      
 COMPILE FUNC: main
-   -> INLINE: atoi quicksort.cpp (75,5)
-         -> llvm.umul.with.overflow.i64 quicksort.cpp (77,8)
-      -> INLINE: _Z4initPii quicksort.cpp (78,2)
+   -> INLINE: atoi quicksort.cpp (76,5)
+         -> llvm.umul.with.overflow.i64 quicksort.cpp (78,8)
+      -> INLINE: _Z4initPii quicksort.cpp (79,2)
             -> DELETE: rand quicksort.cpp (12,10)
-                                                            -> _Z9quickSortPiii quicksort.cpp (81,2)
-      -> INLINE: _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc quicksort.cpp (84,7)
+                                                                  -> INLINE: _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc quicksort.cpp (89,7)
+      -> INLINE: _ZNSt9basic_iosIcSt11char_traitsIcEE8setstateESt12_Ios_Iostate quicksort.cpp (568,8)
+         -> INLINE: _ZNKSt9basic_iosIcSt11char_traitsIcEE7rdstateEv quicksort.cpp (158,27)
+         -> INLINE: _ZStorSt12_Ios_IostateS_ quicksort.cpp (158,37)
+         -> DELETE: _ZNSt9basic_iosIcSt11char_traitsIcEE5clearESt12_Ios_Iostate quicksort.cpp (158,15)
+      -> INLINE: _ZNSt11char_traitsIcE6lengthEPKc quicksort.cpp (571,29)
+                  -> INLINE: _ZNSolsEd quicksort.cpp (89,28)
+         -> INLINE: _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc quicksort.cpp (89,34)
       -> INLINE: _ZNSt9basic_iosIcSt11char_traitsIcEE8setstateESt12_Ios_Iostate quicksort.cpp (568,8)
          -> INLINE: _ZNKSt9basic_iosIcSt11char_traitsIcEE7rdstateEv quicksort.cpp (158,27)
          -> INLINE: _ZStorSt12_Ios_IostateS_ quicksort.cpp (158,37)
          -> DELETE: _ZNSt9basic_iosIcSt11char_traitsIcEE5clearESt12_Ios_Iostate quicksort.cpp (158,15)
       -> INLINE: _ZNSt11char_traitsIcE6lengthEPKc quicksort.cpp (571,29)
          -> DELETE: strlen quicksort.cpp (342,9)
-         -> INLINE: _ZNSolsEd quicksort.cpp (84,28)
-         -> INLINE: _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc quicksort.cpp (84,34)
-      -> INLINE: _ZNSt9basic_iosIcSt11char_traitsIcEE8setstateESt12_Ios_Iostate quicksort.cpp (568,8)
-         -> INLINE: _ZNKSt9basic_iosIcSt11char_traitsIcEE7rdstateEv quicksort.cpp (158,27)
-         -> INLINE: _ZStorSt12_Ios_IostateS_ quicksort.cpp (158,37)
-         -> DELETE: _ZNSt9basic_iosIcSt11char_traitsIcEE5clearESt12_Ios_Iostate quicksort.cpp (158,15)
-      -> INLINE: _ZNSt11char_traitsIcE6lengthEPKc quicksort.cpp (571,29)
-         -> DELETE: strlen quicksort.cpp (342,9)
-         -> INLINE: _ZNSolsEPFRSoS_E quicksort.cpp (84,57)
+         -> INLINE: _ZNSolsEPFRSoS_E quicksort.cpp (89,57)
       -> INLINE:  quicksort.cpp (113,9)
          -> INLINE: _ZNKSt9basic_iosIcSt11char_traitsIcEE5widenEc quicksort.cpp (600,34)
             -> INLINE: _ZSt13__check_facetISt5ctypeIcEERKT_PS3_ quicksort.cpp (450,16)
                            -> INLINE: _ZNKSt5ctypeIcE5widenEc quicksort.cpp (450,40)
                               ->  quicksort.cpp (877,15)
                   -> INLINE: _ZSt5flushIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_ quicksort.cpp (600,14)
-               -> _Z7checkFnPii quicksort.cpp (85,7)
-   -> INLINE: _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc quicksort.cpp (86,8)
+               -> _Z7checkFnPii quicksort.cpp (90,7)
+   -> INLINE: _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc quicksort.cpp (91,8)
       -> INLINE: _ZNSt9basic_iosIcSt11char_traitsIcEE8setstateESt12_Ios_Iostate quicksort.cpp (568,8)
          -> INLINE: _ZNKSt9basic_iosIcSt11char_traitsIcEE7rdstateEv quicksort.cpp (158,27)
          -> INLINE: _ZStorSt12_Ios_IostateS_ quicksort.cpp (158,37)
          -> DELETE: _ZNSt9basic_iosIcSt11char_traitsIcEE5clearESt12_Ios_Iostate quicksort.cpp (158,15)
       -> INLINE: _ZNSt11char_traitsIcE6lengthEPKc quicksort.cpp (571,29)
          -> DELETE: strlen quicksort.cpp (342,9)
-         -> INLINE: _ZNSolsEPFRSoS_E quicksort.cpp (86,32)
+         -> INLINE: _ZNSolsEPFRSoS_E quicksort.cpp (91,32)
       -> INLINE:  quicksort.cpp (113,9)
          -> INLINE: _ZNKSt9basic_iosIcSt11char_traitsIcEE5widenEc quicksort.cpp (600,34)
             -> INLINE: _ZSt13__check_facetISt5ctypeIcEERKT_PS3_ quicksort.cpp (450,16)
                            -> INLINE: _ZNKSt5ctypeIcE5widenEc quicksort.cpp (450,40)
                               ->  quicksort.cpp (877,15)
                   -> INLINE: _ZSt5flushIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_ quicksort.cpp (600,14)
-               -> INLINE: _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc quicksort.cpp (90,7)
-      -> INLINE: _ZNSt9basic_iosIcSt11char_traitsIcEE8setstateESt12_Ios_Iostate quicksort.cpp (568,8)
-         -> INLINE: _ZNKSt9basic_iosIcSt11char_traitsIcEE7rdstateEv quicksort.cpp (158,27)
-         -> INLINE: _ZStorSt12_Ios_IostateS_ quicksort.cpp (158,37)
-         -> DELETE: _ZNSt9basic_iosIcSt11char_traitsIcEE5clearESt12_Ios_Iostate quicksort.cpp (158,15)
-      -> INLINE: _ZNSt11char_traitsIcE6lengthEPKc quicksort.cpp (571,29)
-         -> DELETE: strlen quicksort.cpp (342,9)
-         -> DELETE: _ZNSolsEi quicksort.cpp (92,8)
-   -> INLINE: _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc quicksort.cpp (92,17)
-      -> INLINE: _ZNSt9basic_iosIcSt11char_traitsIcEE8setstateESt12_Ios_Iostate quicksort.cpp (568,8)
-         -> INLINE: _ZNKSt9basic_iosIcSt11char_traitsIcEE7rdstateEv quicksort.cpp (158,27)
-         -> INLINE: _ZStorSt12_Ios_IostateS_ quicksort.cpp (158,37)
-         -> DELETE: _ZNSt9basic_iosIcSt11char_traitsIcEE5clearESt12_Ios_Iostate quicksort.cpp (158,15)
-      -> INLINE: _ZNSt11char_traitsIcE6lengthEPKc quicksort.cpp (571,29)
-         -> DELETE: strlen quicksort.cpp (342,9)
-      -> DELETE: _ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l quicksort.cpp (570,2)
-                                                         -> INLINE: _ZNSolsEPFRSoS_E quicksort.cpp (94,8)
-      -> INLINE:  quicksort.cpp (113,9)
-         -> INLINE: _ZNKSt9basic_iosIcSt11char_traitsIcEE5widenEc quicksort.cpp (600,34)
-            -> INLINE: _ZSt13__check_facetISt5ctypeIcEERKT_PS3_ quicksort.cpp (450,16)
-                           -> INLINE: _ZNKSt5ctypeIcE5widenEc quicksort.cpp (450,40)
-                              ->  quicksort.cpp (877,15)
-                  -> INLINE: _ZSt5flushIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_ quicksort.cpp (600,14)
-                                          
+               
 COMPILE FUNC: _GLOBAL__sub_I_quicksort.cpp
    -> INLINE: __cxx_global_var_init quicksort.cpp
             
