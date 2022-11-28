@@ -66,7 +66,7 @@ void multiply3(int msize, int tidx, int numt, TYPE a[][NUM], TYPE b[][NUM], TYPE
 	#pragma omp parallel for collapse (2)
 	for(i=0; i<msize; i++) {
 		for(k=0; k<msize; k++) {
-#pragma ivdep
+			#pragma ivdep
 			for(j=0; j<msize; j++) {
 				c[i][j] = c[i][j] + a[i][k] * b[k][j];
 			}
@@ -93,7 +93,7 @@ void multiply4(int msize, int tidx, int numt, TYPE a[][NUM], TYPE b[][NUM], TYPE
 
 // DGEMM way of matrix multiply using Intel MKL
 // Link with Intel MKL library: With MSFT VS and Intel Composer integration: Select build components in the Project context menu.
-// For command line - check out the Intel® Math Kernel Library Link Line Advisor 
+// For command line - check out the Intelï¿½ Math Kernel Library Link Line Advisor 
 void multiply5(int msize, int tidx, int numt, TYPE a[][NUM], TYPE b[][NUM], TYPE c[][NUM], TYPE t[][NUM])
 {
 

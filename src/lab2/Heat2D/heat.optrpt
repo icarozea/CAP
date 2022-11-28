@@ -676,90 +676,103 @@ Global optimization report for : stbi_write_jpg
 
 Global optimization report for : write_png
 
-LOOP BEGIN at heat.c (82, 5)
+LOOP BEGIN at heat.c (86, 5)
 
-    LOOP BEGIN at heat.c (83, 9)
+    LOOP BEGIN at heat.c (87, 9)
     LOOP END
 LOOP END
 =================================================================
 
 Global optimization report for : main
 
-LOOP BEGIN at heat.c (28, 9)
+LOOP BEGIN at heat.c (29, 9)
     remark #25567: 2 loops have been collapsed
     remark #15300: LOOP WAS VECTORIZED
     remark #15305: vectorization support: vector length 8
 LOOP END
 
-LOOP BEGIN at heat.c (35, 5)
+LOOP BEGIN at heat.c (36, 5)
     remark #15300: LOOP WAS VECTORIZED
     remark #15305: vectorization support: vector length 8
 LOOP END
 
-LOOP BEGIN at heat.c (39, 5)
+LOOP BEGIN at heat.c (40, 5)
     remark #15436: loop was not vectorized:  
     remark #25438: Loop unrolled without remainder by 8
 LOOP END
 
-LOOP BEGIN at heat.c (28, 9)
+LOOP BEGIN at heat.c (29, 9)
     remark #25567: 2 loops have been collapsed
     remark #15300: LOOP WAS VECTORIZED
     remark #15305: vectorization support: vector length 8
 LOOP END
 
-LOOP BEGIN at heat.c (35, 5)
+LOOP BEGIN at heat.c (36, 5)
     remark #15300: LOOP WAS VECTORIZED
     remark #15305: vectorization support: vector length 8
 LOOP END
 
-LOOP BEGIN at heat.c (39, 5)
+LOOP BEGIN at heat.c (40, 5)
     remark #15436: loop was not vectorized:  
     remark #25438: Loop unrolled without remainder by 8
 LOOP END
 
-LOOP BEGIN at heat.c (114, 5)
+LOOP BEGIN at heat.c (118, 5)
+LOOP END
+=================================================================
 
-    LOOP BEGIN at heat.c (54, 5)
-        remark #25540: Loop unrolled and jammed by 8
-        remark #15553: loop was not vectorized: outer loop is not an auto-vectorization candidate at -O2. Consider using -O3.
+Global optimization report for : .omp_outlined.
 
-        LOOP BEGIN at heat.c (55, 9)
-            remark #15300: LOOP WAS VECTORIZED
-            remark #15305: vectorization support: vector length 16
-        LOOP END
+LOOP BEGIN at heat.c (58, 9)
+    remark #25444: Loopnest Interchanged: ( 1 2 ) --> ( 2 1 )
+    remark #25540: Loop unrolled and jammed by 8
+    remark #15553: loop was not vectorized: outer loop is not an auto-vectorization candidate at -O2. Consider using -O3.
 
-        LOOP BEGIN at heat.c (55, 9)
-        <Remainder loop for vectorization>
-            remark #25583: Number of Array Refs Scalar Replaced In Loop: 24
-        LOOP END
+    LOOP BEGIN at heat.c (55, 5)
+        remark #15300: LOOP WAS VECTORIZED
+        remark #15305: vectorization support: vector length 8
     LOOP END
 
-    LOOP BEGIN at heat.c (54, 5)
-    <Remainder loop>
-        remark #15553: loop was not vectorized: outer loop is not an auto-vectorization candidate at -O2. Consider using -O3.
+    LOOP BEGIN at heat.c (55, 5)
+    <Remainder loop for vectorization>
+    LOOP END
+LOOP END
 
-        LOOP BEGIN at heat.c (55, 9)
-            remark #15300: LOOP WAS VECTORIZED
-            remark #15305: vectorization support: vector length 16
-        LOOP END
+LOOP BEGIN at heat.c (58, 9)
+<Remainder loop>
+    remark #15553: loop was not vectorized: outer loop is not an auto-vectorization candidate at -O2. Consider using -O3.
 
-        LOOP BEGIN at heat.c (55, 9)
-        <Remainder loop for vectorization>
-            remark #25583: Number of Array Refs Scalar Replaced In Loop: 3
-        LOOP END
+    LOOP BEGIN at heat.c (55, 5)
+        remark #15300: LOOP WAS VECTORIZED
+        remark #15305: vectorization support: vector length 8
     LOOP END
 
-    LOOP BEGIN at heat.c (68, 5)
-        remark #15553: loop was not vectorized: outer loop is not an auto-vectorization candidate at -O2. Consider using -O3.
+    LOOP BEGIN at heat.c (55, 5)
+    <Remainder loop for vectorization>
+    LOOP END
+LOOP END
+=================================================================
 
-        LOOP BEGIN at heat.c (69, 9)
-            remark #15300: LOOP WAS VECTORIZED
-            remark #15305: vectorization support: vector length 8
-        LOOP END
+Global optimization report for : .omp_outlined..18
 
-        LOOP BEGIN at heat.c (69, 9)
-        <Remainder loop for vectorization>
-        LOOP END
+LOOP BEGIN at heat.c (71, 5)
+    remark #15553: loop was not vectorized: outer loop is not an auto-vectorization candidate at -O2. Consider using -O3.
+
+    LOOP BEGIN at heat.c (73, 9)
+    <Multiversioned v2>
+        remark #15319: Loop was not vectorized: novector directive used
+    LOOP END
+
+    LOOP BEGIN at heat.c (73, 9)
+    <Multiversioned v1>
+        remark #25228: Loop multiversioned for Data Dependence
+        remark #25564: Store sinked out of the loop
+        remark #15300: LOOP WAS VECTORIZED
+        remark #15305: vectorization support: vector length 8
+    LOOP END
+
+    LOOP BEGIN at heat.c (73, 9)
+    <Remainder loop for vectorization>
     LOOP END
 LOOP END
 =================================================================
@@ -1124,8 +1137,8 @@ COMPILE FUNC: stbi_write_jpg_to_func
    -> stbi_write_jpg_core heat.c (1466,11)
 
 COMPILE FUNC: write_png
-         -> stbi_write_png heat.c (89,5)
-      -> INLINE: colormap_rgb heat.c (85,13)
+         -> stbi_write_png heat.c (93,5)
+      -> INLINE: colormap_rgb heat.c (89,13)
       -> INLINE: colormap_rgbf heat.c (1114,5)
          -> INLINE: colormap__clamp heat.c (1097,21)
             -> llvm.minnum.f32 heat.c (1088,18)
@@ -1137,15 +1150,21 @@ COMPILE FUNC: write_png
       -> llvm.rint.f32 heat.c (1116,10)
       -> llvm.rint.f32 heat.c (1117,10)
 
+COMPILE FUNC: .omp_outlined.
+      
+COMPILE FUNC: .omp_outlined..18
+      -> DELETE: llvm.fabs.f32 heat.c (74,38)
+   -> DELETE: llvm.maxnum.f32 heat.c (74,23)
+      -> llvm.fabs.f32 heat.c (74,38)
+   -> llvm.maxnum.f32 heat.c (74,23)
+   -> llvm.fabs.f32 heat.c (74,38)
+   -> llvm.maxnum.f32 heat.c (74,23)
+
 COMPILE FUNC: main
-                     -> INLINE: init heat.c (108,5)
-   -> INLINE: init heat.c (109,5)
-      -> INLINE: step heat.c (115,9)
-   -> INLINE: diff heat.c (116,18)
-      -> DELETE: llvm.fabs.f32 heat.c (70,38)
-      -> llvm.maxnum.f32 heat.c (70,23)
-      -> llvm.fabs.f32 heat.c (70,38)
-      -> llvm.maxnum.f32 heat.c (70,23)
-            -> write_png heat.c (128,5)
+                     -> INLINE: init heat.c (112,5)
+   -> INLINE: init heat.c (113,5)
+      -> INLINE: step heat.c (119,9)
+         -> INLINE: diff heat.c (120,18)
+                  -> write_png heat.c (132,5)
       
 ---- End Inlining Report ------

@@ -1,3 +1,4 @@
+/*                               ./heat */
 #define _GNU_SOURCE
 #include <math.h>
 #include <stdio.h>
@@ -18,7 +19,7 @@ static const float ENVIROM_TEMP  = 25.0f;
 static const float BOUNDARY_TEMP = 5.0f;
 
 static const float MIN_DELTA = 0.01f;
-static const unsigned int MAX_ITERATIONS = 2000;
+static const unsigned int MAX_ITERATIONS = 20000;
 
 
 
@@ -51,8 +52,10 @@ static void step(unsigned int source_x, unsigned int source_y, const float *rest
 
     float dt = dx2 * dy2 / (2.0 * a * (dx2 + dy2));
 
-    for (unsigned int y = 1; y < N-1; ++y) {
-        for (unsigned int x = 1; x < N-1; ++x) {
+    #pragma omp parallel for
+    #pragma ivdep
+    for (unsigned int x = 1; x < N-1; ++x) {
+        for (unsigned int y = 1; y < N-1; ++y) {
             next[y*N+x] = current[y*N+x] + a * dt *
 				((current[y*N+x+1]   - 2.0*current[y*N+x] + current[y*N+x-1])/dx2 +
 				 (current[(y+1)*N+x] - 2.0*current[y*N+x] + current[(y-1)*N+x])/dy2);
@@ -65,6 +68,7 @@ static void step(unsigned int source_x, unsigned int source_y, const float *rest
 static float diff(const float *restrict current, const float *restrict next) {
     float maxdiff = 0.0f;
 
+    #pragma omp parallel for shared(maxdiff)
     for (unsigned int y = 1; y < N-1; ++y) {
         for (unsigned int x = 1; x < N-1; ++x) {
             maxdiff = fmaxf(maxdiff, fabsf(next[y*N+x] - current[y*N+x]));
