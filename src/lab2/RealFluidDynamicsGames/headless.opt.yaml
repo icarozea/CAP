@@ -317,7 +317,7 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NoDefinition
-DebugLoc:        { File: headless.c, Line: 140, Column: 10 }
+DebugLoc:        { File: headless.c, Line: 140, Column: 8 }
 Function:        one_step
 Args:
   - Callee:          wtime
@@ -449,7 +449,7 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NoDefinition
-DebugLoc:        { File: headless.c, Line: 140, Column: 10 }
+DebugLoc:        { File: headless.c, Line: 140, Column: 8 }
 Function:        one_step
 Args:
   - Callee:          wtime
@@ -799,7 +799,7 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NoDefinition
-DebugLoc:        { File: headless.c, Line: 202, Column: 11 }
+DebugLoc:        { File: headless.c, Line: 205, Column: 11 }
 Function:        main
 Args:
   - Callee:          wtime
@@ -811,7 +811,7 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NoDefinition
-DebugLoc:        { File: headless.c, Line: 203, Column: 2 }
+DebugLoc:        { File: headless.c, Line: 206, Column: 2 }
 Function:        main
 Args:
   - Callee:          printf
@@ -823,7 +823,7 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NoDefinition
-DebugLoc:        { File: headless.c, Line: 206, Column: 2 }
+DebugLoc:        { File: headless.c, Line: 209, Column: 2 }
 Function:        main
 Args:
   - Callee:          exit
@@ -979,7 +979,7 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NoDefinition
-DebugLoc:        { File: headless.c, Line: 202, Column: 11 }
+DebugLoc:        { File: headless.c, Line: 205, Column: 11 }
 Function:        main
 Args:
   - Callee:          wtime
@@ -991,7 +991,7 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NoDefinition
-DebugLoc:        { File: headless.c, Line: 203, Column: 2 }
+DebugLoc:        { File: headless.c, Line: 206, Column: 2 }
 Function:        main
 Args:
   - Callee:          printf
@@ -1003,7 +1003,7 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NoDefinition
-DebugLoc:        { File: headless.c, Line: 206, Column: 2 }
+DebugLoc:        { File: headless.c, Line: 209, Column: 2 }
 Function:        main
 Args:
   - Callee:          exit
@@ -1234,7 +1234,7 @@ Args:
 --- !Passed
 Pass:            inline
 Name:            Inlined
-DebugLoc:        { File: headless.c, Line: 201, Column: 3 }
+DebugLoc:        { File: headless.c, Line: 203, Column: 3 }
 Function:        main
 Args:
   - String:          ''''
@@ -1252,7 +1252,7 @@ Args:
   - String:          ' at callsite '
   - String:          main
   - String:          ':'
-  - Line:            '40'
+  - Line:            '42'
   - String:          ':'
   - Column:          '3'
   - String:          ';'
@@ -1260,7 +1260,7 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            TooCostly
-DebugLoc:        { File: headless.c, Line: 204, Column: 2 }
+DebugLoc:        { File: headless.c, Line: 207, Column: 2 }
 Function:        main
 Args:
   - String:          ''''
@@ -1824,7 +1824,7 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NoDefinition
-DebugLoc:        { File: headless.c, Line: 140, Column: 10 }
+DebugLoc:        { File: headless.c, Line: 140, Column: 8 }
 Function:        main
 Args:
   - Callee:          wtime
@@ -1860,7 +1860,7 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NoDefinition
-DebugLoc:        { File: headless.c, Line: 202, Column: 11 }
+DebugLoc:        { File: headless.c, Line: 205, Column: 11 }
 Function:        main
 Args:
   - Callee:          wtime
@@ -1872,7 +1872,7 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NoDefinition
-DebugLoc:        { File: headless.c, Line: 203, Column: 2 }
+DebugLoc:        { File: headless.c, Line: 206, Column: 2 }
 Function:        main
 Args:
   - Callee:          printf
@@ -1884,7 +1884,7 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NoDefinition
-DebugLoc:        { File: headless.c, Line: 206, Column: 2 }
+DebugLoc:        { File: headless.c, Line: 209, Column: 2 }
 Function:        main
 Args:
   - Callee:          exit
@@ -2297,7 +2297,7 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NoDefinition
-DebugLoc:        { File: headless.c, Line: 140, Column: 10 }
+DebugLoc:        { File: headless.c, Line: 140, Column: 8 }
 Function:        main
 Args:
   - Callee:          wtime
@@ -2333,7 +2333,7 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NoDefinition
-DebugLoc:        { File: headless.c, Line: 202, Column: 11 }
+DebugLoc:        { File: headless.c, Line: 205, Column: 11 }
 Function:        main
 Args:
   - Callee:          wtime
@@ -2345,7 +2345,7 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NoDefinition
-DebugLoc:        { File: headless.c, Line: 203, Column: 2 }
+DebugLoc:        { File: headless.c, Line: 206, Column: 2 }
 Function:        main
 Args:
   - Callee:          printf
@@ -2357,7 +2357,7 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NoDefinition
-DebugLoc:        { File: headless.c, Line: 206, Column: 2 }
+DebugLoc:        { File: headless.c, Line: 209, Column: 2 }
 Function:        main
 Args:
   - Callee:          exit
@@ -2369,7 +2369,7 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            TooCostly
-DebugLoc:        { File: headless.c, Line: 204, Column: 2 }
+DebugLoc:        { File: headless.c, Line: 207, Column: 2 }
 Function:        main
 Args:
   - String:          ''''
@@ -2728,7 +2728,7 @@ Args:
 --- !Missed
 Pass:            licm
 Name:            LoadWithLoopInvariantAddressInvalidated
-DebugLoc:        { File: headless.c, Line: 140, Column: 18 }
+DebugLoc:        { File: headless.c, Line: 140, Column: 16 }
 Function:        main
 Args:
   - String:          failed to move load with loop-invariant address because the loop may invalidate its value
@@ -3008,7 +3008,7 @@ Args:
 --- !Missed
 Pass:            licm
 Name:            LoadWithLoopInvariantAddressInvalidated
-DebugLoc:        { File: headless.c, Line: 140, Column: 18 }
+DebugLoc:        { File: headless.c, Line: 140, Column: 16 }
 Function:        main
 Args:
   - String:          failed to move load with loop-invariant address because the loop may invalidate its value
@@ -3809,7 +3809,7 @@ Args:
 --- !Missed
 Pass:            gvn
 Name:            LoadClobbered
-DebugLoc:        { File: headless.c, Line: 140, Column: 18 }
+DebugLoc:        { File: headless.c, Line: 140, Column: 16 }
 Function:        main
 Args:
   - String:          'load of type '
@@ -3820,7 +3820,7 @@ Args:
     DebugLoc:        { File: headless.c, Line: 144, Column: 14 }
   - String:          ' because it is clobbered by '
   - ClobberedBy:     call
-    DebugLoc:        { File: headless.c, Line: 140, Column: 10 }
+    DebugLoc:        { File: headless.c, Line: 140, Column: 8 }
 ...
 --- !Missed
 Pass:            gvn
@@ -3836,7 +3836,7 @@ Args:
     DebugLoc:        { File: headless.c, Line: 0, Column: 0 }
   - String:          ' because it is clobbered by '
   - ClobberedBy:     call
-    DebugLoc:        { File: headless.c, Line: 140, Column: 10 }
+    DebugLoc:        { File: headless.c, Line: 140, Column: 8 }
 ...
 --- !Missed
 Pass:            gvn
@@ -3852,7 +3852,7 @@ Args:
     DebugLoc:        { File: headless.c, Line: 130, Column: 18 }
   - String:          ' because it is clobbered by '
   - ClobberedBy:     call
-    DebugLoc:        { File: headless.c, Line: 140, Column: 10 }
+    DebugLoc:        { File: headless.c, Line: 140, Column: 8 }
 ...
 --- !Missed
 Pass:            gvn
@@ -3868,7 +3868,7 @@ Args:
     DebugLoc:        { File: headless.c, Line: 134, Column: 16 }
   - String:          ' because it is clobbered by '
   - ClobberedBy:     call
-    DebugLoc:        { File: headless.c, Line: 140, Column: 10 }
+    DebugLoc:        { File: headless.c, Line: 140, Column: 8 }
 ...
 --- !Missed
 Pass:            gvn
@@ -3884,7 +3884,7 @@ Args:
     DebugLoc:        { File: headless.c, Line: 138, Column: 17 }
   - String:          ' because it is clobbered by '
   - ClobberedBy:     call
-    DebugLoc:        { File: headless.c, Line: 140, Column: 10 }
+    DebugLoc:        { File: headless.c, Line: 140, Column: 8 }
 ...
 --- !Missed
 Pass:            gvn
@@ -3900,12 +3900,12 @@ Args:
     DebugLoc:        { File: headless.c, Line: 0, Column: 0 }
   - String:          ' because it is clobbered by '
   - ClobberedBy:     call
-    DebugLoc:        { File: headless.c, Line: 140, Column: 10 }
+    DebugLoc:        { File: headless.c, Line: 140, Column: 8 }
 ...
 --- !Missed
 Pass:            gvn
 Name:            LoadClobbered
-DebugLoc:        { File: headless.c, Line: 203, Column: 46 }
+DebugLoc:        { File: headless.c, Line: 206, Column: 46 }
 Function:        main
 Args:
   - String:          'load of type '
@@ -3916,7 +3916,7 @@ Args:
     DebugLoc:        { File: headless.c, Line: 199, Column: 10 }
   - String:          ' because it is clobbered by '
   - ClobberedBy:     call
-    DebugLoc:        { File: headless.c, Line: 202, Column: 11 }
+    DebugLoc:        { File: headless.c, Line: 205, Column: 11 }
 ...
 --- !Missed
 Pass:            gvn
@@ -4638,7 +4638,7 @@ Args:
 --- !Missed
 Pass:            gvn
 Name:            LoadClobbered
-DebugLoc:        { File: headless.c, Line: 140, Column: 18 }
+DebugLoc:        { File: headless.c, Line: 140, Column: 16 }
 Function:        main
 Args:
   - String:          'load of type '
@@ -4649,7 +4649,7 @@ Args:
     DebugLoc:        { File: headless.c, Line: 144, Column: 14 }
   - String:          ' because it is clobbered by '
   - ClobberedBy:     call
-    DebugLoc:        { File: headless.c, Line: 140, Column: 10 }
+    DebugLoc:        { File: headless.c, Line: 140, Column: 8 }
 ...
 --- !Missed
 Pass:            gvn
@@ -4665,7 +4665,7 @@ Args:
     DebugLoc:        { File: headless.c, Line: 0, Column: 0 }
   - String:          ' because it is clobbered by '
   - ClobberedBy:     call
-    DebugLoc:        { File: headless.c, Line: 140, Column: 10 }
+    DebugLoc:        { File: headless.c, Line: 140, Column: 8 }
 ...
 --- !Missed
 Pass:            gvn
@@ -4681,7 +4681,7 @@ Args:
     DebugLoc:        { File: headless.c, Line: 130, Column: 18 }
   - String:          ' because it is clobbered by '
   - ClobberedBy:     call
-    DebugLoc:        { File: headless.c, Line: 140, Column: 10 }
+    DebugLoc:        { File: headless.c, Line: 140, Column: 8 }
 ...
 --- !Missed
 Pass:            gvn
@@ -4697,7 +4697,7 @@ Args:
     DebugLoc:        { File: headless.c, Line: 134, Column: 16 }
   - String:          ' because it is clobbered by '
   - ClobberedBy:     call
-    DebugLoc:        { File: headless.c, Line: 140, Column: 10 }
+    DebugLoc:        { File: headless.c, Line: 140, Column: 8 }
 ...
 --- !Missed
 Pass:            gvn
@@ -4713,7 +4713,7 @@ Args:
     DebugLoc:        { File: headless.c, Line: 138, Column: 17 }
   - String:          ' because it is clobbered by '
   - ClobberedBy:     call
-    DebugLoc:        { File: headless.c, Line: 140, Column: 10 }
+    DebugLoc:        { File: headless.c, Line: 140, Column: 8 }
 ...
 --- !Missed
 Pass:            gvn
@@ -4729,12 +4729,12 @@ Args:
     DebugLoc:        { File: headless.c, Line: 0, Column: 0 }
   - String:          ' because it is clobbered by '
   - ClobberedBy:     call
-    DebugLoc:        { File: headless.c, Line: 140, Column: 10 }
+    DebugLoc:        { File: headless.c, Line: 140, Column: 8 }
 ...
 --- !Missed
 Pass:            gvn
 Name:            LoadClobbered
-DebugLoc:        { File: headless.c, Line: 203, Column: 46 }
+DebugLoc:        { File: headless.c, Line: 206, Column: 46 }
 Function:        main
 Args:
   - String:          'load of type '
@@ -4745,7 +4745,7 @@ Args:
     DebugLoc:        { File: headless.c, Line: 199, Column: 10 }
   - String:          ' because it is clobbered by '
   - ClobberedBy:     call
-    DebugLoc:        { File: headless.c, Line: 202, Column: 11 }
+    DebugLoc:        { File: headless.c, Line: 205, Column: 11 }
 ...
 --- !Missed
 Pass:            gvn
@@ -5467,7 +5467,7 @@ Args:
 --- !Missed
 Pass:            gvn
 Name:            LoadClobbered
-DebugLoc:        { File: headless.c, Line: 140, Column: 18 }
+DebugLoc:        { File: headless.c, Line: 140, Column: 16 }
 Function:        main
 Args:
   - String:          'load of type '
@@ -5478,7 +5478,7 @@ Args:
     DebugLoc:        { File: headless.c, Line: 144, Column: 14 }
   - String:          ' because it is clobbered by '
   - ClobberedBy:     call
-    DebugLoc:        { File: headless.c, Line: 140, Column: 10 }
+    DebugLoc:        { File: headless.c, Line: 140, Column: 8 }
 ...
 --- !Missed
 Pass:            gvn
@@ -5494,7 +5494,7 @@ Args:
     DebugLoc:        { File: headless.c, Line: 0, Column: 0 }
   - String:          ' because it is clobbered by '
   - ClobberedBy:     call
-    DebugLoc:        { File: headless.c, Line: 140, Column: 10 }
+    DebugLoc:        { File: headless.c, Line: 140, Column: 8 }
 ...
 --- !Missed
 Pass:            gvn
@@ -5510,7 +5510,7 @@ Args:
     DebugLoc:        { File: headless.c, Line: 130, Column: 18 }
   - String:          ' because it is clobbered by '
   - ClobberedBy:     call
-    DebugLoc:        { File: headless.c, Line: 140, Column: 10 }
+    DebugLoc:        { File: headless.c, Line: 140, Column: 8 }
 ...
 --- !Missed
 Pass:            gvn
@@ -5526,7 +5526,7 @@ Args:
     DebugLoc:        { File: headless.c, Line: 134, Column: 16 }
   - String:          ' because it is clobbered by '
   - ClobberedBy:     call
-    DebugLoc:        { File: headless.c, Line: 140, Column: 10 }
+    DebugLoc:        { File: headless.c, Line: 140, Column: 8 }
 ...
 --- !Missed
 Pass:            gvn
@@ -5542,7 +5542,7 @@ Args:
     DebugLoc:        { File: headless.c, Line: 138, Column: 17 }
   - String:          ' because it is clobbered by '
   - ClobberedBy:     call
-    DebugLoc:        { File: headless.c, Line: 140, Column: 10 }
+    DebugLoc:        { File: headless.c, Line: 140, Column: 8 }
 ...
 --- !Missed
 Pass:            gvn
@@ -5558,12 +5558,12 @@ Args:
     DebugLoc:        { File: headless.c, Line: 0, Column: 0 }
   - String:          ' because it is clobbered by '
   - ClobberedBy:     call
-    DebugLoc:        { File: headless.c, Line: 140, Column: 10 }
+    DebugLoc:        { File: headless.c, Line: 140, Column: 8 }
 ...
 --- !Missed
 Pass:            gvn
 Name:            LoadClobbered
-DebugLoc:        { File: headless.c, Line: 203, Column: 46 }
+DebugLoc:        { File: headless.c, Line: 206, Column: 46 }
 Function:        main
 Args:
   - String:          'load of type '
@@ -5574,7 +5574,7 @@ Args:
     DebugLoc:        { File: headless.c, Line: 199, Column: 10 }
   - String:          ' because it is clobbered by '
   - ClobberedBy:     call
-    DebugLoc:        { File: headless.c, Line: 202, Column: 11 }
+    DebugLoc:        { File: headless.c, Line: 205, Column: 11 }
 ...
 --- !Missed
 Pass:            gvn
@@ -5923,7 +5923,7 @@ Args:
 --- !Missed
 Pass:            licm
 Name:            LoadWithLoopInvariantAddressInvalidated
-DebugLoc:        { File: headless.c, Line: 140, Column: 18 }
+DebugLoc:        { File: headless.c, Line: 140, Column: 16 }
 Function:        main
 Args:
   - String:          failed to move load with loop-invariant address because the loop may invalidate its value
@@ -6503,7 +6503,7 @@ Args:
 --- !Missed
 Pass:            gvn
 Name:            LoadClobbered
-DebugLoc:        { File: headless.c, Line: 140, Column: 18 }
+DebugLoc:        { File: headless.c, Line: 140, Column: 16 }
 Function:        main
 Args:
   - String:          'load of type '
@@ -6514,7 +6514,7 @@ Args:
     DebugLoc:        { File: headless.c, Line: 144, Column: 14 }
   - String:          ' because it is clobbered by '
   - ClobberedBy:     call
-    DebugLoc:        { File: headless.c, Line: 140, Column: 10 }
+    DebugLoc:        { File: headless.c, Line: 140, Column: 8 }
 ...
 --- !Missed
 Pass:            gvn
@@ -6530,7 +6530,7 @@ Args:
     DebugLoc:        { File: headless.c, Line: 0, Column: 0 }
   - String:          ' because it is clobbered by '
   - ClobberedBy:     call
-    DebugLoc:        { File: headless.c, Line: 140, Column: 10 }
+    DebugLoc:        { File: headless.c, Line: 140, Column: 8 }
 ...
 --- !Missed
 Pass:            gvn
@@ -6546,7 +6546,7 @@ Args:
     DebugLoc:        { File: headless.c, Line: 130, Column: 18 }
   - String:          ' because it is clobbered by '
   - ClobberedBy:     call
-    DebugLoc:        { File: headless.c, Line: 140, Column: 10 }
+    DebugLoc:        { File: headless.c, Line: 140, Column: 8 }
 ...
 --- !Missed
 Pass:            gvn
@@ -6562,7 +6562,7 @@ Args:
     DebugLoc:        { File: headless.c, Line: 134, Column: 16 }
   - String:          ' because it is clobbered by '
   - ClobberedBy:     call
-    DebugLoc:        { File: headless.c, Line: 140, Column: 10 }
+    DebugLoc:        { File: headless.c, Line: 140, Column: 8 }
 ...
 --- !Missed
 Pass:            gvn
@@ -6578,7 +6578,7 @@ Args:
     DebugLoc:        { File: headless.c, Line: 138, Column: 17 }
   - String:          ' because it is clobbered by '
   - ClobberedBy:     call
-    DebugLoc:        { File: headless.c, Line: 140, Column: 10 }
+    DebugLoc:        { File: headless.c, Line: 140, Column: 8 }
 ...
 --- !Missed
 Pass:            gvn
@@ -6594,12 +6594,12 @@ Args:
     DebugLoc:        { File: headless.c, Line: 0, Column: 0 }
   - String:          ' because it is clobbered by '
   - ClobberedBy:     call
-    DebugLoc:        { File: headless.c, Line: 140, Column: 10 }
+    DebugLoc:        { File: headless.c, Line: 140, Column: 8 }
 ...
 --- !Missed
 Pass:            gvn
 Name:            LoadClobbered
-DebugLoc:        { File: headless.c, Line: 203, Column: 46 }
+DebugLoc:        { File: headless.c, Line: 206, Column: 46 }
 Function:        main
 Args:
   - String:          'load of type '
@@ -6610,7 +6610,7 @@ Args:
     DebugLoc:        { File: headless.c, Line: 199, Column: 10 }
   - String:          ' because it is clobbered by '
   - ClobberedBy:     call
-    DebugLoc:        { File: headless.c, Line: 202, Column: 11 }
+    DebugLoc:        { File: headless.c, Line: 205, Column: 11 }
 ...
 --- !Missed
 Pass:            gvn
@@ -7246,7 +7246,7 @@ Args:
 --- !Missed
 Pass:            gvn
 Name:            LoadClobbered
-DebugLoc:        { File: headless.c, Line: 140, Column: 18 }
+DebugLoc:        { File: headless.c, Line: 140, Column: 16 }
 Function:        main
 Args:
   - String:          'load of type '
@@ -7257,7 +7257,7 @@ Args:
     DebugLoc:        { File: headless.c, Line: 144, Column: 14 }
   - String:          ' because it is clobbered by '
   - ClobberedBy:     call
-    DebugLoc:        { File: headless.c, Line: 140, Column: 10 }
+    DebugLoc:        { File: headless.c, Line: 140, Column: 8 }
 ...
 --- !Missed
 Pass:            gvn
@@ -7273,7 +7273,7 @@ Args:
     DebugLoc:        { File: headless.c, Line: 0, Column: 0 }
   - String:          ' because it is clobbered by '
   - ClobberedBy:     call
-    DebugLoc:        { File: headless.c, Line: 140, Column: 10 }
+    DebugLoc:        { File: headless.c, Line: 140, Column: 8 }
 ...
 --- !Missed
 Pass:            gvn
@@ -7289,7 +7289,7 @@ Args:
     DebugLoc:        { File: headless.c, Line: 130, Column: 18 }
   - String:          ' because it is clobbered by '
   - ClobberedBy:     call
-    DebugLoc:        { File: headless.c, Line: 140, Column: 10 }
+    DebugLoc:        { File: headless.c, Line: 140, Column: 8 }
 ...
 --- !Missed
 Pass:            gvn
@@ -7305,7 +7305,7 @@ Args:
     DebugLoc:        { File: headless.c, Line: 134, Column: 16 }
   - String:          ' because it is clobbered by '
   - ClobberedBy:     call
-    DebugLoc:        { File: headless.c, Line: 140, Column: 10 }
+    DebugLoc:        { File: headless.c, Line: 140, Column: 8 }
 ...
 --- !Missed
 Pass:            gvn
@@ -7321,7 +7321,7 @@ Args:
     DebugLoc:        { File: headless.c, Line: 138, Column: 17 }
   - String:          ' because it is clobbered by '
   - ClobberedBy:     call
-    DebugLoc:        { File: headless.c, Line: 140, Column: 10 }
+    DebugLoc:        { File: headless.c, Line: 140, Column: 8 }
 ...
 --- !Missed
 Pass:            gvn
@@ -7337,12 +7337,12 @@ Args:
     DebugLoc:        { File: headless.c, Line: 0, Column: 0 }
   - String:          ' because it is clobbered by '
   - ClobberedBy:     call
-    DebugLoc:        { File: headless.c, Line: 140, Column: 10 }
+    DebugLoc:        { File: headless.c, Line: 140, Column: 8 }
 ...
 --- !Missed
 Pass:            gvn
 Name:            LoadClobbered
-DebugLoc:        { File: headless.c, Line: 203, Column: 46 }
+DebugLoc:        { File: headless.c, Line: 206, Column: 46 }
 Function:        main
 Args:
   - String:          'load of type '
@@ -7353,7 +7353,7 @@ Args:
     DebugLoc:        { File: headless.c, Line: 199, Column: 10 }
   - String:          ' because it is clobbered by '
   - ClobberedBy:     call
-    DebugLoc:        { File: headless.c, Line: 202, Column: 11 }
+    DebugLoc:        { File: headless.c, Line: 205, Column: 11 }
 ...
 --- !Missed
 Pass:            gvn
@@ -8477,7 +8477,7 @@ Args:
 --- !Passed
 Pass:            TTI
 Name:            DontUnroll
-DebugLoc:        { File: headless.c, Line: 200, Column: 2 }
+DebugLoc:        { File: headless.c, Line: 202, Column: 2 }
 Function:        main
 Args:
   - String:          'advising against unrolling the loop because it contains a '
@@ -8719,7 +8719,7 @@ Args:
 --- !Missed
 Pass:            licm
 Name:            LoadWithLoopInvariantAddressInvalidated
-DebugLoc:        { File: headless.c, Line: 140, Column: 18 }
+DebugLoc:        { File: headless.c, Line: 140, Column: 16 }
 Function:        main
 Args:
   - String:          failed to move load with loop-invariant address because the loop may invalidate its value
@@ -8767,7 +8767,7 @@ Args:
 --- !Missed
 Pass:            regalloc
 Name:            LoopSpillReloadCopies
-DebugLoc:        { File: headless.c, Line: 200, Column: 2 }
+DebugLoc:        { File: headless.c, Line: 202, Column: 2 }
 Function:        main
 Args:
   - NumSpills:       '2'
@@ -9350,7 +9350,7 @@ Args:
 --- !Analysis
 Pass:            asm-printer
 Name:            InstructionMix
-DebugLoc:        { File: headless.c, Line: 202, Column: 11 }
+DebugLoc:        { File: headless.c, Line: 205, Column: 11 }
 Function:        main
 Args:
   - String:          'BasicBlock: '

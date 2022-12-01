@@ -137,7 +137,7 @@ static void one_step ( void )
 	dens_step ( N, dens, dens_prev, u, v, diff, dt );
 	dens_ns_p_cell += 1.0e9 * (wtime()-start_t)/(N*N);
 
-	if (1.0<wtime()-one_second) { /* at least 1s between stats */
+	if (1<wtime()-one_second) { /* at least 1s between stats */
 		printf("%lf, %lf, %lf, %lf: ns per cell total, react, vel_step, dens_step\n",
 			(react_ns_p_cell+vel_ns_p_cell+dens_ns_p_cell)/times,
 			react_ns_p_cell/times, vel_ns_p_cell/times, dens_ns_p_cell/times);
@@ -197,8 +197,11 @@ int main ( int argc, char ** argv )
 	if ( !allocate_data () ) exit ( 1 );
 	clear_data ();
 	start_t = wtime();
-	for (i=0; i<2048; i++)
+	//#pragma omp parallel for num_threads(12) schedule(static,2)
+	//#pragma omp parallel for nowait
+	for (i=0; i<2048; i++){
 		one_step ();
+	}
 	stop_t = wtime();
 	printf("Iterations time %f secs.\n", stop_t-start_t);
 	free_data ();
