@@ -39,28 +39,28 @@ static void lin_solve(unsigned int n, boundary b, float * x, const float * x0, f
 	    
 	//#pragma omp simd aligned(x,x0)
     	for (unsigned int k = 0; k < 20; k++) {
-	#pragma omp parallel for shared(x, x0)
-	    for (unsigned int i = 1; i <= n; i++) {
-	    for (unsigned int j = (i % 2 == 0) ? 1 : 2; j <= n; j+=2) {
-		x[IX(i, j)] = (x0[IX(i, j)] + a * (x[IX(i - 1, j)] +
-						   x[IX(i + 1, j)] +
-						   x[IX(i, j - 1)] +
-						   x[IX(i, j + 1)])) / c;
-	    }
-	}
-	#pragma omp parallel for shared(x, x0)
-	for (unsigned int i = 1; i <= n; i++) {
-	    for (unsigned int j = (i % 2 != 0) ? 1 : 2; j <= n; j+=2) {
-		x[IX(i, j)] = (x0[IX(i, j)] + a * (x[IX(i - 1, j)] +
-						   x[IX(i + 1, j)] +
-						   x[IX(i, j - 1)] +
-						   x[IX(i, j + 1)])) / c;
-	    }
-	}  
-        set_bnd(n, b, x);
+            #pragma omp parallel for collapse(2)
+            for (unsigned int i = 1; i <= n; i++) {
+                for (unsigned int j = (i % 2 == 0) ? 1 : 2; j <= n; j+=2) {
+                x[IX(i, j)] = (x0[IX(i, j)] + a * (x[IX(i - 1, j)] +
+                                x[IX(i + 1, j)] +
+                                x[IX(i, j - 1)] +
+                                x[IX(i, j + 1)])) / c;
+                }
+            }
+            #pragma omp parallel for collapse(2)
+            for (unsigned int i = 1; i <= n; i++) {
+                for (unsigned int j = (i % 2 != 0) ? 1 : 2; j <= n; j+=2) {
+                x[IX(i, j)] = (x0[IX(i, j)] + a * (x[IX(i - 1, j)] +
+                                x[IX(i + 1, j)] +
+                                x[IX(i, j - 1)] +
+                                x[IX(i, j + 1)])) / c;
+                }
+            }  
+            set_bnd(n, b, x);
+        }
     }
 }
-
 static void diffuse(unsigned int n, boundary b, float * x, const float * x0, float diff, float dt)
 {
     float a = dt * diff * n * n;
