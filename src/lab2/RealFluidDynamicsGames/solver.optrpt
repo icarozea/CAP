@@ -15,20 +15,22 @@ LOOP END
 LOOP BEGIN at solver.c (14, 5)
 <Remainder loop for vectorization>
 LOOP END
-
-LOOP BEGIN at solver.c (39, 5)
-
-    LOOP BEGIN at solver.c (22, 5)
-    LOOP END
-LOOP END
 =================================================================
 
 Global optimization report for : advect
 
-LOOP BEGIN at solver.c (77, 5)
+LOOP BEGIN at solver.c (78, 5)
 
-    LOOP BEGIN at solver.c (79, 5)
+    LOOP BEGIN at solver.c (80, 5)
     LOOP END
+LOOP END
+=================================================================
+
+Global optimization report for : lin_solve
+
+LOOP BEGIN at solver.c (38, 2)
+    remark: OpenMP: Parallel loop was outlined
+    remark: OpenMP: Parallel loop was outlined
 LOOP END
 =================================================================
 
@@ -71,25 +73,13 @@ LOOP END
 LOOP BEGIN at solver.c (14, 5)
 <Remainder loop for vectorization>
 LOOP END
-
-LOOP BEGIN at solver.c (39, 5)
-
-    LOOP BEGIN at solver.c (22, 5)
-    LOOP END
-LOOP END
-
-LOOP BEGIN at solver.c (39, 5)
-
-    LOOP BEGIN at solver.c (22, 5)
-    LOOP END
-LOOP END
 =================================================================
 
 Global optimization report for : project
 
-LOOP BEGIN at solver.c (110, 9)
+LOOP BEGIN at solver.c (111, 9)
 
-    LOOP BEGIN at solver.c (111, 5)
+    LOOP BEGIN at solver.c (112, 5)
     LOOP END
 LOOP END
 
@@ -99,15 +89,9 @@ LOOP END
 LOOP BEGIN at solver.c (22, 5)
 LOOP END
 
-LOOP BEGIN at solver.c (39, 5)
+LOOP BEGIN at solver.c (124, 9)
 
-    LOOP BEGIN at solver.c (22, 5)
-    LOOP END
-LOOP END
-
-LOOP BEGIN at solver.c (123, 9)
-
-    LOOP BEGIN at solver.c (124, 5)
+    LOOP BEGIN at solver.c (125, 5)
     LOOP END
 LOOP END
 
@@ -120,21 +104,17 @@ LOOP END
 
 Global optimization report for : lin_solve.extracted
 
-LOOP BEGIN at solver.c (40, 9)
+LOOP BEGIN at solver.c (39, 3)
     remark: OpenMP: Outlined parallel loop
-
-    LOOP BEGIN at solver.c (42, 13)
-    LOOP END
+    remark #15521: Loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
 LOOP END
 =================================================================
 
 Global optimization report for : lin_solve.extracted.7
 
-LOOP BEGIN at solver.c (49, 9)
+LOOP BEGIN at solver.c (50, 3)
     remark: OpenMP: Outlined parallel loop
-
-    LOOP BEGIN at solver.c (51, 13)
-    LOOP END
+    remark #15521: Loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
 LOOP END
 =================================================================
 
@@ -149,45 +129,46 @@ DEAD STATIC FUNC: add_source
 
 DEAD STATIC FUNC: diffuse
 
-DEAD STATIC FUNC: lin_solve
-
 DEAD STATIC FUNC: llvm.directive.region.entry
 
 DEAD STATIC FUNC: llvm.directive.region.exit
 
 COMPILE FUNC: set_bnd
 
+COMPILE FUNC: lin_solve
+   -> DELETE: llvm.directive.region.entry solver.c (39,3)
+   -> DELETE: llvm.directive.region.exit solver.c (39,3)
+   -> DELETE: llvm.directive.region.entry solver.c (50,3)
+   -> DELETE: llvm.directive.region.exit solver.c (50,3)
+   -> set_bnd solver.c (61,3)
+      
 COMPILE FUNC: advect
-   -> set_bnd solver.c (104,5)
+   -> set_bnd solver.c (105,5)
 
 COMPILE FUNC: dens_step
-   -> INLINE: add_source solver.c (135,5)
-   -> INLINE: diffuse solver.c (137,5)
-      -> INLINE: lin_solve solver.c (66,5)
-         -> INLINE: set_bnd solver.c (59,9)
-                     -> advect solver.c (139,5)
+   -> INLINE: add_source solver.c (136,5)
+   -> INLINE: diffuse solver.c (138,5)
+      -> lin_solve solver.c (67,5)
+   -> advect solver.c (140,5)
 
 COMPILE FUNC: project
-   -> INLINE: set_bnd solver.c (117,5)
    -> INLINE: set_bnd solver.c (118,5)
-   -> INLINE: lin_solve solver.c (120,5)
-      -> INLINE: set_bnd solver.c (59,9)
-               -> INLINE: set_bnd solver.c (129,5)
+   -> INLINE: set_bnd solver.c (119,5)
+   -> lin_solve solver.c (121,5)
    -> INLINE: set_bnd solver.c (130,5)
+   -> INLINE: set_bnd solver.c (131,5)
 
 COMPILE FUNC: vel_step
-   -> INLINE: add_source solver.c (144,5)
    -> INLINE: add_source solver.c (145,5)
-   -> INLINE: diffuse solver.c (147,5)
-      -> INLINE: lin_solve solver.c (66,5)
-         -> INLINE: set_bnd solver.c (59,9)
-                     -> INLINE: diffuse solver.c (149,5)
-      -> INLINE: lin_solve solver.c (66,5)
-         -> INLINE: set_bnd solver.c (59,9)
-                     -> project solver.c (150,5)
-   -> advect solver.c (153,5)
+   -> INLINE: add_source solver.c (146,5)
+   -> INLINE: diffuse solver.c (148,5)
+      -> lin_solve solver.c (67,5)
+   -> INLINE: diffuse solver.c (150,5)
+      -> lin_solve solver.c (67,5)
+   -> project solver.c (151,5)
    -> advect solver.c (154,5)
-   -> project solver.c (155,5)
+   -> advect solver.c (155,5)
+   -> project solver.c (156,5)
 
 COMPILE FUNC: lin_solve.extracted.7
       
