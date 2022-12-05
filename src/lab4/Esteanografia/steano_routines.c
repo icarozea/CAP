@@ -29,7 +29,7 @@ void imRGB2im(t_sRGB *imRGB, uint8_t *im, int *w, int *h)
 	int w_ = imRGB->w;
 	*w = imRGB->w;
 	*h = imRGB->h;
-
+	//collapse(2)
 	for (int i=0; i<*h; i++)
 		for (int j=0; j<*w; j++)
 		{
@@ -107,6 +107,7 @@ void dct8x8_2d(float *in, float *out, int width, int height, float *mcosine, flo
 	int bM=8;
 	int bN=8;
 
+	//usar collapse(4)
 	for(int bi=0; bi<height/bM; bi++)
 	{
 		int stride_i = bi * bM;
@@ -118,6 +119,7 @@ void dct8x8_2d(float *in, float *out, int width, int height, float *mcosine, flo
 				for (int j=0; j<bN; j++)
 				{
 					float tmp = 0.0;
+					//No paralelizarlo
 					for (int ii=0; ii < bM; ii++) 
 					{
 						for (int jj=0; jj < bN; jj++)
@@ -135,6 +137,7 @@ void idct8x8_2d(float *in, float *out, int width, int height, float *mcosine, fl
 	int bM=8;
 	int bN=8;
 
+	//usar collapse(4)
 	for(int bi=0; bi<height/bM; bi++)
 	{
 		int stride_i = bi * bM;
@@ -146,6 +149,7 @@ void idct8x8_2d(float *in, float *out, int width, int height, float *mcosine, fl
 				for (int j=0; j<bN; j++)
 				{
 					float tmp = 0.0;
+					//No paralelizarlo
 					for (int ii=0; ii < bM; ii++) 
 					{
 						for (int jj=0; jj < bN; jj++)
@@ -173,7 +177,7 @@ void insert_msg(float *img, int width, int height, char *msg, int msg_length)
 	
 	if(bsI*bsJ<msg_length*8)
 		printf("Image not enough to save message!!!\n");
-
+	//No tiene impacto hacer el target probable collapse(2)
 	for(int c=0; c<msg_length; c++)
 		for(int b=0; b<8; b++)
 		{
@@ -331,7 +335,7 @@ void decoder(char *file_in, char *msg_decoded, int msg_len)
 	im2imRGB(im, w, h, &imRGB);
 	rgb2ycbcr(&imRGB, &imYCrCb);
 	dct8x8_2d(imYCrCb.Y, Ydct, imYCrCb.w, imYCrCb.h, mcosine, alpha);
-		
+	//Enviar al kernel	
 	extract_msg(Ydct, imYCrCb.w, imYCrCb.h, msg_decoded, msg_len);
 
 	double stop = omp_get_wtime();

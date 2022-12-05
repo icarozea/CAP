@@ -56,7 +56,7 @@ int main(int argc, char** argv)
 	int iter = 0;
 
 #ifdef _OPENMP
-#pragma omp ...
+#pragma omp target data map(to: A[0:n*m], error) map(alloc: Anew[0:n*m])
 #endif
 {
 	StartTimer();
@@ -65,7 +65,8 @@ int main(int argc, char** argv)
 	{
 		error = 0.0;
 #ifdef _OPENMP
-		#pragma omp ...
+		#pragma omp target update to(error)
+		#pragma omp target teams distribute parallel for collapse(2) reduction(max:error)
 #endif
 		for( int j = 1; j < n-1; j++)
 		{
@@ -77,7 +78,7 @@ int main(int argc, char** argv)
 			}
 		}
 #ifdef _OPENMP
-		#pragma omp ...
+		#pragma omp target teams distribute parallel for collapse(2)
 #endif
 		for( int j = 1; j < n-1; j++)
 		{
@@ -88,7 +89,7 @@ int main(int argc, char** argv)
 		}
 
 #ifdef _OPENMP
-		#pragma omp ...
+		#pragma omp target update from(error)
 #endif
 		if(iter % 100 == 0) printf("%5d, %0.6f\n", iter, error);
 
@@ -98,8 +99,8 @@ int main(int argc, char** argv)
 	printf("iter=%i error=%f\n", iter, error);
 }
 
+
 	printf(" total: %f s\n", runtime / 1000);
 
 	free(A); free(Anew);
 }
-
