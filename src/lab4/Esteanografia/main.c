@@ -18,6 +18,7 @@ int main(int argc, char **argv)
 	strcpy(file_logo, argv[2]);
 	strcpy(file_out, argv[3]);
 	
+	printf("Params (%s, %s)\n", argv[1], argv[2]);
 
 	char *msg, *msg_decoded;
 	int msg_len;

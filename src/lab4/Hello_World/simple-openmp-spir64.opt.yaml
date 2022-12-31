@@ -1,0 +1,469 @@
+--- !Missed
+Pass:            openmp
+Name:            Target
+DebugLoc:        { File: simple.cpp, Line: 26, Column: 1 }
+Function:        main
+Args:
+  - String:          'Consider using OpenMP combined construct with "target" to get optimal performance'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: simple.cpp, Line: 16, Column: 34 }
+Function:        main
+Args:
+  - Callee:          malloc
+  - String:          ' will not be inlined into '
+  - Caller:          main
+    DebugLoc:        { File: simple.cpp, Line: 14, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: simple.cpp, Line: 20, Column: 3 }
+Function:        main
+Args:
+  - Callee:          printf
+  - String:          ' will not be inlined into '
+  - Caller:          main
+    DebugLoc:        { File: simple.cpp, Line: 14, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: simple.cpp, Line: 31, Column: 2 }
+Function:        main
+Args:
+  - Callee:          printf
+  - String:          ' will not be inlined into '
+  - Caller:          main
+    DebugLoc:        { File: simple.cpp, Line: 14, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: simple.cpp, Line: 34, Column: 13 }
+Function:        main
+Args:
+  - Callee:          _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+  - String:          ' will not be inlined into '
+  - Caller:          main
+    DebugLoc:        { File: simple.cpp, Line: 14, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: simple.cpp, Line: 34, Column: 30 }
+Function:        main
+Args:
+  - Callee:          _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+  - String:          ' will not be inlined into '
+  - Caller:          main
+    DebugLoc:        { File: simple.cpp, Line: 14, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: simple.cpp, Line: 34, Column: 58 }
+Function:        main
+Args:
+  - Callee:          _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+  - String:          ' will not be inlined into '
+  - Caller:          main
+    DebugLoc:        { File: simple.cpp, Line: 14, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: simple.cpp, Line: 35, Column: 41 }
+Function:        main
+Args:
+  - Callee:          _ZNSolsEi
+  - String:          ' will not be inlined into '
+  - Caller:          main
+    DebugLoc:        { File: simple.cpp, Line: 14, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: simple.cpp, Line: 35, Column: 52 }
+Function:        main
+Args:
+  - Callee:          _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+  - String:          ' will not be inlined into '
+  - Caller:          main
+    DebugLoc:        { File: simple.cpp, Line: 14, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: simple.cpp, Line: 37, Column: 3 }
+Function:        main
+Args:
+  - Callee:          free
+  - String:          ' will not be inlined into '
+  - Caller:          main
+    DebugLoc:        { File: simple.cpp, Line: 14, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: simple.cpp, Line: 16, Column: 34 }
+Function:        main
+Args:
+  - Callee:          malloc
+  - String:          ' will not be inlined into '
+  - Caller:          main
+    DebugLoc:        { File: simple.cpp, Line: 14, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: simple.cpp, Line: 20, Column: 3 }
+Function:        main
+Args:
+  - Callee:          printf
+  - String:          ' will not be inlined into '
+  - Caller:          main
+    DebugLoc:        { File: simple.cpp, Line: 14, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: simple.cpp, Line: 31, Column: 2 }
+Function:        main
+Args:
+  - Callee:          printf
+  - String:          ' will not be inlined into '
+  - Caller:          main
+    DebugLoc:        { File: simple.cpp, Line: 14, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: simple.cpp, Line: 34, Column: 13 }
+Function:        main
+Args:
+  - Callee:          _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+  - String:          ' will not be inlined into '
+  - Caller:          main
+    DebugLoc:        { File: simple.cpp, Line: 14, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: simple.cpp, Line: 34, Column: 30 }
+Function:        main
+Args:
+  - Callee:          _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+  - String:          ' will not be inlined into '
+  - Caller:          main
+    DebugLoc:        { File: simple.cpp, Line: 14, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: simple.cpp, Line: 34, Column: 58 }
+Function:        main
+Args:
+  - Callee:          _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+  - String:          ' will not be inlined into '
+  - Caller:          main
+    DebugLoc:        { File: simple.cpp, Line: 14, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: simple.cpp, Line: 35, Column: 41 }
+Function:        main
+Args:
+  - Callee:          _ZNSolsEi
+  - String:          ' will not be inlined into '
+  - Caller:          main
+    DebugLoc:        { File: simple.cpp, Line: 14, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: simple.cpp, Line: 35, Column: 52 }
+Function:        main
+Args:
+  - Callee:          _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
+  - String:          ' will not be inlined into '
+  - Caller:          main
+    DebugLoc:        { File: simple.cpp, Line: 14, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: simple.cpp, Line: 37, Column: 3 }
+Function:        main
+Args:
+  - Callee:          free
+  - String:          ' will not be inlined into '
+  - Caller:          main
+    DebugLoc:        { File: simple.cpp, Line: 14, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Passed
+Pass:            inline
+Name:            Inlined
+DebugLoc:        { File: '/glob/development-tools/versions/oneapi/2023.0/oneapi/compiler/2023.0.0/linux/bin-llvm/../compiler/include/omp.h', 
+                   Line: 497, Column: 5 }
+Function:        main
+Args:
+  - String:          ''''
+  - Callee:          '_ZL46omp_is_initial_device$ompvariant$S2$s6$Pnohostv'
+  - String:          ''' inlined into '''
+  - Caller:          main
+    DebugLoc:        { File: simple.cpp, Line: 14, Column: 0 }
+  - String:          ''''
+  - String:          ' with '
+  - String:          '(cost='
+  - Cost:            '-15030'
+  - String:          ', threshold='
+  - Threshold:       '487'
+  - String:          ')'
+  - String:          ' at callsite '
+  - String:          main
+  - String:          ':'
+  - Line:            '483'
+  - String:          ':'
+  - Column:          '5'
+  - String:          ';'
+...
+--- !Passed
+Pass:            openmp
+Name:            Region
+DebugLoc:        { File: simple.cpp, Line: 26, Column: 1 }
+Function:        main
+Args:
+  - Construct:       parallel loop
+  - String:          ' construct transformed'
+...
+--- !Passed
+Pass:            openmp
+Name:            Region
+DebugLoc:        { File: simple.cpp, Line: 22, Column: 1 }
+Function:        __omp_offloading_3b_8a98f507__Z4main_l22
+Args:
+  - Construct:       target
+  - String:          ' construct transformed'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: simple.cpp, Line: 22, Column: 1 }
+Function:        __omp_offloading_3b_8a98f507__Z4main_l22
+Args:
+  - Callee:          _Z12get_local_idj
+  - String:          ' will not be inlined into '
+  - Caller:          __omp_offloading_3b_8a98f507__Z4main_l22
+    DebugLoc:        { File: simple.cpp, Line: 22, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: simple.cpp, Line: 22, Column: 1 }
+Function:        __omp_offloading_3b_8a98f507__Z4main_l22
+Args:
+  - Callee:          _Z12get_local_idj
+  - String:          ' will not be inlined into '
+  - Caller:          __omp_offloading_3b_8a98f507__Z4main_l22
+    DebugLoc:        { File: simple.cpp, Line: 22, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: simple.cpp, Line: 22, Column: 1 }
+Function:        __omp_offloading_3b_8a98f507__Z4main_l22
+Args:
+  - Callee:          _Z12get_local_idj
+  - String:          ' will not be inlined into '
+  - Caller:          __omp_offloading_3b_8a98f507__Z4main_l22
+    DebugLoc:        { File: simple.cpp, Line: 22, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: simple.cpp, Line: 24, Column: 12 }
+Function:        __omp_offloading_3b_8a98f507__Z4main_l22
+Args:
+  - Callee:          _Z22__spirv_ControlBarrieriii
+  - String:          ' will not be inlined into '
+  - Caller:          __omp_offloading_3b_8a98f507__Z4main_l22
+    DebugLoc:        { File: simple.cpp, Line: 22, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: simple.cpp, Line: 27, Column: 10 }
+Function:        __omp_offloading_3b_8a98f507__Z4main_l22
+Args:
+  - Callee:          _Z22__spirv_ControlBarrieriii
+  - String:          ' will not be inlined into '
+  - Caller:          __omp_offloading_3b_8a98f507__Z4main_l22
+    DebugLoc:        { File: simple.cpp, Line: 22, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: simple.cpp, Line: 26, Column: 1 }
+Function:        __omp_offloading_3b_8a98f507__Z4main_l22
+Args:
+  - Callee:          _Z14get_local_sizej
+  - String:          ' will not be inlined into '
+  - Caller:          __omp_offloading_3b_8a98f507__Z4main_l22
+    DebugLoc:        { File: simple.cpp, Line: 22, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: simple.cpp, Line: 26, Column: 1 }
+Function:        __omp_offloading_3b_8a98f507__Z4main_l22
+Args:
+  - Callee:          _Z12get_local_idj
+  - String:          ' will not be inlined into '
+  - Caller:          __omp_offloading_3b_8a98f507__Z4main_l22
+    DebugLoc:        { File: simple.cpp, Line: 22, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: simple.cpp, Line: 26, Column: 1 }
+Function:        __omp_offloading_3b_8a98f507__Z4main_l22
+Args:
+  - Callee:          _Z22__spirv_ControlBarrieriii
+  - String:          ' will not be inlined into '
+  - Caller:          __omp_offloading_3b_8a98f507__Z4main_l22
+    DebugLoc:        { File: simple.cpp, Line: 22, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: simple.cpp, Line: 22, Column: 1 }
+Function:        __omp_offloading_3b_8a98f507__Z4main_l22
+Args:
+  - Callee:          _Z12get_local_idj
+  - String:          ' will not be inlined into '
+  - Caller:          __omp_offloading_3b_8a98f507__Z4main_l22
+    DebugLoc:        { File: simple.cpp, Line: 22, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: simple.cpp, Line: 22, Column: 1 }
+Function:        __omp_offloading_3b_8a98f507__Z4main_l22
+Args:
+  - Callee:          _Z12get_local_idj
+  - String:          ' will not be inlined into '
+  - Caller:          __omp_offloading_3b_8a98f507__Z4main_l22
+    DebugLoc:        { File: simple.cpp, Line: 22, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: simple.cpp, Line: 22, Column: 1 }
+Function:        __omp_offloading_3b_8a98f507__Z4main_l22
+Args:
+  - Callee:          _Z12get_local_idj
+  - String:          ' will not be inlined into '
+  - Caller:          __omp_offloading_3b_8a98f507__Z4main_l22
+    DebugLoc:        { File: simple.cpp, Line: 22, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: simple.cpp, Line: 24, Column: 12 }
+Function:        __omp_offloading_3b_8a98f507__Z4main_l22
+Args:
+  - Callee:          _Z22__spirv_ControlBarrieriii
+  - String:          ' will not be inlined into '
+  - Caller:          __omp_offloading_3b_8a98f507__Z4main_l22
+    DebugLoc:        { File: simple.cpp, Line: 22, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: simple.cpp, Line: 27, Column: 10 }
+Function:        __omp_offloading_3b_8a98f507__Z4main_l22
+Args:
+  - Callee:          _Z22__spirv_ControlBarrieriii
+  - String:          ' will not be inlined into '
+  - Caller:          __omp_offloading_3b_8a98f507__Z4main_l22
+    DebugLoc:        { File: simple.cpp, Line: 22, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: simple.cpp, Line: 26, Column: 1 }
+Function:        __omp_offloading_3b_8a98f507__Z4main_l22
+Args:
+  - Callee:          _Z14get_local_sizej
+  - String:          ' will not be inlined into '
+  - Caller:          __omp_offloading_3b_8a98f507__Z4main_l22
+    DebugLoc:        { File: simple.cpp, Line: 22, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: simple.cpp, Line: 26, Column: 1 }
+Function:        __omp_offloading_3b_8a98f507__Z4main_l22
+Args:
+  - Callee:          _Z12get_local_idj
+  - String:          ' will not be inlined into '
+  - Caller:          __omp_offloading_3b_8a98f507__Z4main_l22
+    DebugLoc:        { File: simple.cpp, Line: 22, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Missed
+Pass:            inline
+Name:            NoDefinition
+DebugLoc:        { File: simple.cpp, Line: 26, Column: 1 }
+Function:        __omp_offloading_3b_8a98f507__Z4main_l22
+Args:
+  - Callee:          _Z22__spirv_ControlBarrieriii
+  - String:          ' will not be inlined into '
+  - Caller:          __omp_offloading_3b_8a98f507__Z4main_l22
+    DebugLoc:        { File: simple.cpp, Line: 22, Column: 0 }
+  - String:          ' because its definition is unavailable'
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+Function:        __omp_offloading_3b_8a98f507__Z4main_l22
+Args:
+  - String:          'hoisting '
+  - Inst:            trunc
+...

@@ -15,6 +15,7 @@ void im2imRGB(uint8_t *im, int w, int h, t_sRGB *imRGB)
 	imRGB->w = w;
 	imRGB->h = h;
 
+	//collapse(2)
 	for (int i=0; i<h; i++)
 		for (int j=0; j<w; j++)
 		{
@@ -106,8 +107,9 @@ void dct8x8_2d(float *in, float *out, int width, int height, float *mcosine, flo
 {
 	int bM=8;
 	int bN=8;
-
-	//usar collapse(4)
+	#pragma omp target data map(tofrom: out[0:width*height]) map(to: in[0:width*height], width, height, mcosine[0:8*8], alpha[0:8*8])
+	{
+	#pragma omp target teams distribute parallel for collapse(4) firstprivate(bM, bN)
 	for(int bi=0; bi<height/bM; bi++)
 	{
 		int stride_i = bi * bM;
@@ -130,6 +132,7 @@ void dct8x8_2d(float *in, float *out, int width, int height, float *mcosine, flo
 			}
 		}
 	}
+	}
 }
 
 void idct8x8_2d(float *in, float *out, int width, int height, float *mcosine, float *alpha)
@@ -137,7 +140,10 @@ void idct8x8_2d(float *in, float *out, int width, int height, float *mcosine, fl
 	int bM=8;
 	int bN=8;
 
-	//usar collapse(4)
+  
+	#pragma omp target data map(tofrom: out[0:width*height]) map(to: in[0:width*height], width, height, mcosine[0:8*8], alpha[0:8*8])
+	{
+	#pragma omp target teams distribute parallel for collapse(4) firstprivate(bM, bN)
 	for(int bi=0; bi<height/bM; bi++)
 	{
 		int stride_i = bi * bM;
@@ -160,6 +166,8 @@ void idct8x8_2d(float *in, float *out, int width, int height, float *mcosine, fl
 			}
 		}
 	}
+	}
+  
 }
 
 void insert_msg(float *img, int width, int height, char *msg, int msg_length)
@@ -284,15 +292,21 @@ void encoder(char *file_in, char *file_out, char *msg, int msg_len)
 
 	double start = omp_get_wtime();
 
+	//device
 	im2imRGB(im, w, h, &imRGB);
 	rgb2ycbcr(&imRGB, &imYCrCb);
+
+	//device
 	dct8x8_2d(imYCrCb.Y, Ydct, imYCrCb.w, imYCrCb.h, mcosine, alpha);
 
 	// Insert Message		
 	insert_msg(Ydct, imYCrCb.w, imYCrCb.h, msg, msg_len);
 
+	//device
 	idct8x8_2d(Ydct, imYCrCb.Y, imYCrCb.w, imYCrCb.h, mcosine, alpha);
    	ycbcr2rgb(&imYCrCb, &imRGB);
+
+	//device
 	imRGB2im(&imRGB, im_out, &w, &h);
 
 	double stop = omp_get_wtime();
@@ -331,9 +345,10 @@ void decoder(char *file_in, char *msg_decoded, int msg_len)
 	get_dct8x8_params(mcosine, alpha);
 
 	double start = omp_get_wtime();
-
+	//device
 	im2imRGB(im, w, h, &imRGB);
 	rgb2ycbcr(&imRGB, &imYCrCb);
+	//device
 	dct8x8_2d(imYCrCb.Y, Ydct, imYCrCb.w, imYCrCb.h, mcosine, alpha);
 	//Enviar al kernel	
 	extract_msg(Ydct, imYCrCb.w, imYCrCb.h, msg_decoded, msg_len);

@@ -6,6 +6,7 @@
 // clang-format off
 
 // To compile: icpx -fiopenmp -fopenmp-targets=spir64 -O2 test_no_collapse.cpp
+// To run: OMP_TARGET_OFFLOAD=MANDATORY LIBOMPTARGET_DEBUG=1 ./a.out
 
 #include <stdio.h>
 #include <stdlib.h>
